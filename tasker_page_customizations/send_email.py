@@ -149,7 +149,7 @@ def send_email_via_mailgun(recipient, subject, body):
     response = requests.post(url, auth=("api", api_key), data=data)
     return response.status_code
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def send_verification_code_to_email(user_profile):
     try:
         # Generate a verification code
@@ -160,7 +160,7 @@ def send_verification_code_to_email(user_profile):
         
         customer_profile.set("email_verification_code", verification_code)
         customer_profile.save()
-        user = frappe.get_doc("User", user_profile.user)
+        user = frappe.get_doc("User", customer_profile.user)
         user_email = user.email
         # Compose and send the email with the verification code using Mailgun
         subject = "Verification Code"
