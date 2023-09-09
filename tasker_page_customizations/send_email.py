@@ -158,7 +158,7 @@ def send_verification_code_to_email(user_profile):
         # Save the verification code in the user's profile
         customer_profile = frappe.get_doc("Customer Profile",user_profile)
         
-        customer_profile.set("email_verification_code", verification_code)
+        customer_profile.email_verification_code= verification_code
         customer_profile.save()
         user = frappe.get_doc("User", customer_profile.user)
         user_email = user.email
