@@ -135,9 +135,7 @@ def generate_verification_code(length=6):
     return code
 
 def send_email_via_mailgun(recipient, subject, body):
-    api_key = 'ee5417ba40ff7c6e5871251552e3863e-7ca144d2-2a123627'
-    domain = 'taskerpage.com'
-    sender = 'Taskerpage No-Reply <postmaster@taskerpage.com>'
+
     """Send an email using the Mailgun API."""
     url = f"https://api.eu.mailgun.net/v3/{domain}/messages"
     data = {
@@ -147,6 +145,7 @@ def send_email_via_mailgun(recipient, subject, body):
         'text': body,
     }
     response = requests.post(url, auth=("api", api_key), data=data)
+    print(response)
     return response.status_code
 
 @frappe.whitelist(allow_guest=True)
