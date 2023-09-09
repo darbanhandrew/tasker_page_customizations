@@ -156,17 +156,17 @@ def send_verification_code_to_email(user_profile):
         verification_code = generate_verification_code()
 
         # Save the verification code in the user's profile
-        customer_profile = frappe.get_doc("Customer Profile",user_profile)
+        # customer_profile = frappe.get_doc("Customer Profile",user_profile)
         
-        customer_profile.email_verification_code= verification_code
-        customer_profile.save()
-        user = frappe.get_doc("User", customer_profile.user)
-        user_email = user.email
-        # Compose and send the email with the verification code using Mailgun
+        # customer_profile.email_verification_code= verification_code
+        # customer_profile.save()
+        # user = frappe.get_doc("User", customer_profile.user)
+        # user_email = user.email
+        # # Compose and send the email with the verification code using Mailgun
         subject = "Verification Code"
         message = f"Your verification code is: {verification_code}"
 
-        response_code = send_email_via_mailgun(user_email, subject, message)
+        response_code = send_email_via_mailgun(user_profile, subject, message)
 
         if response_code == 200:
             return {"status": "success", "message": "Verification code sent successfully."}
