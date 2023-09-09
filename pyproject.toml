@@ -3,7 +3,7 @@ name = "tasker_page_customizations"
 authors = [
     { name = "Mohammad Darban Baran", email = "darbanhandrew@gmail.com"}
 ]
-description = "Taskerpage Customizations"
+description = "taskerpage customizations"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

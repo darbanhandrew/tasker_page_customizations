@@ -1,7 +1,7 @@
 app_name = "tasker_page_customizations"
 app_title = "Tasker Page Customizations"
 app_publisher = "Mohammad Darban Baran"
-app_description = "Taskerpage Customizations"
+app_description = "taskerpage customizations"
 app_email = "darbanhandrew@gmail.com"
 app_license = "MIT"
 # required_apps = []
