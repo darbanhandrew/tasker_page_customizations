@@ -139,7 +139,7 @@ def send_email_via_mailgun(recipient, subject, body):
     domain = 'taskerpage.com'
     sender = 'Taskerpage No-Reply <postmaster@taskerpage.com>'
     """Send an email using the Mailgun API."""
-    url = f"https://api.mailgun.net/v3/{domain}/messages"
+    url = f"https://api.eu.mailgun.net/v3/{domain}/messages"
     data = {
         'from': sender,
         'to': recipient,
