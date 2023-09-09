@@ -158,6 +158,8 @@ app_license = "MIT"
 #	"frappe.desk.doctype.event.event.get_events": "tasker_page_customizations.event.get_events"
 # }
 #
+override_email_send = "tasker_page_customizations.send_email.send"
+get_sender_details = "tasker_page_customizations.send_email.get_sender_details"
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
